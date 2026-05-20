@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEHA FT ACHU ❤️</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #000000, #2a0000, #000000);
+      color: white;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .hearts {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      color: rgba(255, 0, 0, 0.5);
+      animation: float 10s linear infinite;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh);
+      }
+      to {
+        transform: translateY(-100vh);
+      }
+    }
+
+    .lockscreen {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .lock-box {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid #5c0000;
+      padding: 40px;
+      border-radius: 30px;
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(255,0,0,0.2);
+    }
+
+    .lock {
+      font-size: 70px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 50px;
+      color: #ffb3b3;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      color: #ffd6d6;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      border-radius: 15px;
+      border: 1px solid #7a0000;
+      background: #1a0000;
+      color: white;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    button {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      background: #a30000;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: #d10000;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 90px;
+      color: #ffcccc;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 22px;
+      color: #ffd6d6;
+    }
+
+    .days {
+      margin-top: 20px;
+      color: #ff9999;
+    }
+
+    section {
+      padding: 100px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 50px;
+      margin-bottom: 50px;
+      color: #ffcccc;
+    }
+
+    .story-card {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid #5c0000;
+      border-radius: 30px;
+      padding: 30px;
+      margin-bottom: 30px;
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+
+    .story-card:hover {
+      transform: translateY(-5px) scale(1.01);
+    }
+
+    .story-card h3 {
+      color: #ff9999;
+      margin-bottom: 10px;
+      font-size: 30px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 30px;
+      border: 2px solid #5c0000;
+      transition: 0.4s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.04) rotate(1deg);
+    }
+
+    .quiz-card {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid #5c0000;
+      border-radius: 30px;
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+
+    .quiz-card h3 {
+      margin-bottom: 15px;
+      color: #ffd6d6;
+    }
+
+    .love-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .love-page h2 {
+      font-size: 60px;
+      margin-bottom: 40px;
+      color: #ffcccc;
+    }
+
+    .buttons {
+      position: relative;
+      width: 400px;
+      height: 200px;
+    }
+
+    #noBtn {
+      position: absolute;
+      left: 220px;
+      top: 0;
+      background: gray;
+    }
+
+    .letter {
+      max-width: 800px;
+      margin: auto;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid #5c0000;
+      border-radius: 40px;
+      padding: 50px;
+      text-align: center;
+      line-height: 2;
+      backdrop-filter: blur(10px);
+    }
+
+    .letter h2 {
+      font-size: 50px;
+      margin-bottom: 30px;
+      color: #ffcccc;
+    }
+
+    .confetti {
+      position: fixed;
+      font-size: 30px;
+      animation: explode 2s linear forwards;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @keyframes explode {
+      from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-500px) rotate(720deg) scale(0);
+        opacity: 0;
+      }
+    }
+
+    @media(max-width: 768px) {
+      .hero h2 {
+        font-size: 55px;
+      }
+
+      .love-page h2 {
+        font-size: 40px;
+      }
+
+      h1 {
+        font-size: 35px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hearts" id="hearts"></div>
+
+<div class="lockscreen" id="lockscreen">
+  <div class="lock-box">
+    <div class="lock">🔒</div>
+
+    <h1>NEHA FT ACHU</h1>
+
+    <p class="subtitle">enter password to unlock our world ❤️</p>
+
+    <input type="password" id="password" placeholder="hint: 1921">
+
+    <button onclick="unlockSite()">Unlock ❤️</button>
+  </div>
+</div>
+
+<div id="website" class="hidden">
+
+  <section class="hero">
+    <h2>Welcome To Our World ❤️</h2>
+
+    <p>
+      from a random senior call to becoming each other's favorite person.
+    </p>
+
+    <p class="days" id="daysTogether"></p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Our Story ❤️</h2>
+
+    <div class="story-card">
+      <h3>☎️ The Ragging Call</h3>
+      <p>A random senior call that somehow changed everything.</p>
+    </div>
+
+    <div class="story-card">
+      <h3>🎶 The Concert Night</h3>
+      <p>The Vineeth Sreenivasan concert where feelings became real.</p>
+    </div>
+
+    <div class="story-card">
+      <h3>🌙 Nishagandhi Talks</h3>
+      <p>Long talks. Quiet nights. Comfort in each other.</p>
+    </div>
+
+    <div class="story-card">
+      <h3>❤️ September 24</h3>
+      <p>NSS night. The confession. The beginning of us.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Our Pics 📸</h2>
+
+    <div class="gallery">
+      <img src="images/1.jpeg">
+      <img src="images/2.jpeg">
+      <img src="images/3.jpeg">
+      <img src="images/4.jpeg">
+      <img src="images/5.jpeg">
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Relationship Quiz 🎮</h2>
+
+    <div class="quiz-card">
+      <h3>When did we confess?</h3>
+      <input type="text">
+    </div>
+
+    <div class="quiz-card">
+      <h3>Where did we have our first kiss?</h3>
+      <input type="text">
+    </div>
+
+    <div class="quiz-card">
+      <h3>Where did we go for our first date?</h3>
+      <input type="text">
+    </div>
+
+    <div class="quiz-card">
+      <h3>When did you have a crush on me?</h3>
+      <input type="text">
+    </div>
+
+    <div class="quiz-card">
+      <h3>Where do we go the most to have long talks?</h3>
+      <input type="text">
+    </div>
+
+    <div style="text-align:center; margin-top:30px;">
+      <button onclick="celebrateLove()">Submit Answers ❤️</button>
+    </div>
+  </section>
+
+  <section class="love-page">
+    <h2>Achu... do you love me? ❤️</h2>
+
+    <div class="buttons">
+      <button onclick="celebrateLove()">YES 💌</button>
+
+      <button id="noBtn">NO 🚩</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="letter">
+      <h2>To My Achu ❤️</h2>
+
+      <p>
+        8 months of me ragebaiting you yet loving you the same.
+        <br><br>
+        I love you for the man you are — for your softness,
+        your patience, your heart, and the way you make
+        everything feel safe.
+        <br><br>
+        You are genuinely the sweetest boy to ever exist.
+        <br><br>
+        Thank you for making college feel like home.
+        <br><br>
+        Forever your annoying girl,
+        <br>
+        Neha ❤️
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  function unlockSite() {
+    const password = document.getElementById('password').value;
+
+    if(password === '1921') {
+      document.getElementById('lockscreen').style.display = 'none';
+      document.getElementById('website').classList.remove('hidden');
+    } else {
+      alert('wrong password achuuu 😭');
+    }
+  }
+
+  const noBtn = document.getElementById('noBtn');
+
+  noBtn.addEventListener('mouseover', () => {
+    const x = Math.random() * 300;
+    const y = Math.random() * 150;
+
+    noBtn.style.left = x + 'px';
+    noBtn.style.top = y + 'px';
+
+    const texts = [
+      'wrong answer 🚩',
+      'be serious 😭',
+      'illegal choice',
+      'nice joke',
+      '1921 access revoked',
+      'try again 💀'
+    ];
+
+    noBtn.innerText = texts[Math.floor(Math.random() * texts.length)];
+  });
+
+  function celebrateLove() {
+    for(let i = 0; i < 50; i++) {
+      const confetti = document.createElement('div');
+
+      confetti.innerHTML = '❤️';
+      confetti.classList.add('confetti');
+
+      confetti.style.left = Math.random() * window.innerWidth + 'px';
+      confetti.style.top = window.innerHeight + 'px';
+
+      document.body.appendChild(confetti);
+
+      setTimeout(() => {
+        confetti.remove();
+      }, 2000);
+    }
+  }
+
+  const hearts = document.getElementById('hearts');
+
+  for(let i = 0; i < 40; i++) {
+    const heart = document.createElement('div');
+
+    heart.classList.add('heart');
+    heart.innerHTML = '❤️';
+
+    heart.style.left = Math.random() * 100 + '%';
+    heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+    heart.style.animationDuration = Math.random() * 5 + 5 + 's';
+
+    hearts.appendChild(heart);
+  }
+
+  const startDate = new Date('2024-09-24');
+  const today = new Date();
+
+  const diff = today - startDate;
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+  document.getElementById('daysTogether').innerText = `together for ${days} days ❤️`;
+</script>
+
+</body>
+</html>
